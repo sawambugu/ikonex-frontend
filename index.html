@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikonex Academy</title>
+    <link rel="stylesheet" href="styles.css"></head>
+    
+<body>
+    <header><h1>Ikonex Academy Dashboard</h1></header><main>
+<section class="card">
+<h2>1. Setup Classroom & Subjects</h2>          <form id="streamForm"><input type="text" id="streamName" placeholder="Stream Name (e.g., Form 1A)" required><button type="submit">Add Stream</button></form><br>
+<form id="subjectForm"><input type="text" id="subjectName" placeholder="Subject Name (e.g., Math)" required><button type="submit">Add Subject</button></form>
+        </section>
+
+<section class="card">
+    <h2>2. Register Student</h2>
+       <form id="studentForm">
+    <input type="text" id="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    <input type="number" id="streamId" placeholder="Stream ID" required>      <button type="submit">Register</button>
+        </form></section>
+
+<section class="card">
+    <h2>3. Enter Exam Score</h2>
+        <form id="scoreForm">
+    <input type="number" id="studentId" placeholder="Student ID" required>
+    <input type="number" id="subjectId" placeholder="Subject ID" required>
+    <input type="number" id="marks" placeholder="Marks (0-100)" min="0" max="100" required>            <button type="submit">Submit Score</button>
+        </form></section>
+
+<section class="card">
+    <h2>4. Generate Reports (PDF)</h2>
+        <input type="number" id="reportStudentId" placeholder="Student ID" required>
+        <button onclick="generateReportCard()">Individual Report Card</button>
+        <br><br> <input type="number" id="reportStreamId" placeholder="Stream ID" required>
+        <button onclick="generateClassReport()">Class Performance Ranking</button>
+        </section>
+<section class="card">
+
+    <h2>6. Advanced Management (Edit/View)</h2>
+    
+    <h3>View & Filter</h3>
+    <input type="number" id="viewStudentId" placeholder="Student ID"> 
+    <button onclick="viewStudent()">View Single Student</button> <br><br>
+    <input type="number" id="viewStreamId" placeholder="Stream ID"> 
+    <button onclick="viewStreamStudents()">View Students in Stream</button>
+    <div id="viewResults" style="margin-top:10px; color:var(--primary); font-weight:bold;"></div>
+
+    <h3>Edit Student</h3>
+    <form id="editStudentForm">
+<input type="number" id="editStuId" placeholder="Student ID" required>
+<input type="text" id="editFName" placeholder="New First Name" required>
+<input type="text" id="editLName" placeholder="New Last Name" required>
+<input type="number" id="editStream" placeholder="New Stream ID" required>
+     <button type="submit">Update Student</button></form>
+
+    <h3>Edit / Delete Subject</h3>
+    <form id="editSubjectForm">
+<input type="number" id="editSubId" placeholder="Subject ID" required>
+<input type="text" id="editSubName" placeholder="New Subject Name">
+  <button type="submit">Update Subject</button>
+  <button type="button" onclick="deleteSubject()" style="background:red;">Delete Subject</button></form>
+</section>
+
+<section class="card">
+    <h2>5. Directory & Management</h2>
+    <button onclick="fetchStudents()">Load Students</button>
+    <ul id="studentList"></ul></section>
+
+    </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>    <script src="app.js"></script>
+</body></html>

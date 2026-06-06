@@ -1,0 +1,74 @@
+:root {
+    
+    --primary: #004B87;
+    --secondary: #CBD5E1; 
+    --primary-hover: #003360;
+    --bg-color: #F8FAFC;
+    --text-color: #1E293B;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+input {
+    padding: 0.5rem;
+    border: 1px solid var(--secondary);
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--secondary);
+}
+
+li:last-child {
+    border-bottom: none;
+}
